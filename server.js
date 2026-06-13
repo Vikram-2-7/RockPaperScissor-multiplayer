@@ -88,9 +88,9 @@ function getResult(move1, move2) {
         return { player1: 'tie', player2: 'tie' };
     }
     const wins = {
-        cannon: 'cutlass',
-        map: 'cannon',
-        cutlass: 'map'
+        rock: 'scissors',
+        paper: 'rock',
+        scissors: 'paper'
     };
     if (wins[move1] === move2) {
         return { player1: 'win', player2: 'lose' };
