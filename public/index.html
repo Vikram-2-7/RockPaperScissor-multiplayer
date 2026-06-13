@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pirates of the Caribbean RPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="ocean-bg">
+
+        <div class="container">
+
+            <h1 class="title">⚓ Pirates of the Caribbean ⚓</h1>
+            <h2 class="subtitle">— Cannon, Map & Cutlass —</h2>
+
+            <div class="status-box">
+                <p id="status">Connecting to the seas...</p>
+            </div>
+
+            <div class="moves">
+                <button class="move-btn" onclick="sendMove('cannon')">
+                    <span class="emoji">💣</span>
+                    <span class="move-name">Cannon</span>
+                </button>
+                <button class="move-btn" onclick="sendMove('map')">
+                    <span class="emoji">🗺️</span>
+                    <span class="move-name">Map</span>
+                </button>
+                <button class="move-btn" onclick="sendMove('cutlass')">
+                    <span class="emoji">⚔️</span>
+                    <span class="move-name">Cutlass</span>
+                </button>
+            </div>
+
+            <div class="scoreboard">
+                <div class="score-card">
+                    <p class="score-label">You</p>
+                    <p class="score-value" id="my-score">0</p>
+                </div>
+                <div class="score-divider">VS</div>
+                <div class="score-card">
+                    <p class="score-label">Opponent</p>
+                    <p class="score-value" id="opp-score">0</p>
+                </div>
+            </div>
+
+            <div class="round-box">
+                <p id="round">Round 0</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
