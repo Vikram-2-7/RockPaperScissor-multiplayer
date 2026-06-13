@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="pirate">
 <head>
-    <title>Pirates of the Caribbean RPS</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <div class="ocean-bg">
-
+    <div class="bg">
         <div class="container">
 
-            <h1 class="title">⚓ Pirates of the Caribbean ⚓</h1>
-            <h2 class="subtitle">— Cannon, Map & Cutlass —</h2>
+            <!-- Theme Toggle -->
+            <div class="theme-toggle-wrapper">
+                <span class="theme-label">🏴‍☠️</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="themeToggle" onchange="switchTheme()">
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-label">🧜‍♀️</span>
+            </div>
+
+            <h1 class="title" id="title">⚓ Pirates of the Caribbean ⚓</h1>
+            <h2 class="subtitle" id="subtitle">— A Game of Cannon, Map & Cutlass —</h2>
 
             <div class="status-box">
                 <p id="status">Connecting to the seas...</p>
             </div>
 
             <div class="moves">
-                <button class="move-btn" onclick="sendMove('cannon')">
-                    <span class="emoji">💣</span>
-                    <span class="move-name">Cannon</span>
+                <button class="move-btn" onclick="sendMove('rock')">
+                    <span class="emoji" id="rock-emoji">💣</span>
+                    <span class="move-name">Rock</span>
                 </button>
-                <button class="move-btn" onclick="sendMove('map')">
-                    <span class="emoji">🗺️</span>
-                    <span class="move-name">Map</span>
+                <button class="move-btn" onclick="sendMove('paper')">
+                    <span class="emoji" id="paper-emoji">🗺️</span>
+                    <span class="move-name">Paper</span>
                 </button>
-                <button class="move-btn" onclick="sendMove('cutlass')">
-                    <span class="emoji">⚔️</span>
-                    <span class="move-name">Cutlass</span>
+                <button class="move-btn" onclick="sendMove('scissors')">
+                    <span class="emoji" id="scissors-emoji">⚔️</span>
+                    <span class="move-name">Scissors</span>
                 </button>
             </div>
 
@@ -51,7 +60,6 @@
             </div>
 
         </div>
-
     </div>
 
 </body>
